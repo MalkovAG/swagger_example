@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%if people%}
+You're added {{people.name}} to {{group.name}}
+<a href="/group">back</a>
+{%else%}
+add user to {{group.name}}
+<form action= "/add_people/{{group.id}}" method="POST">
+    <input type="text" id="name" name="people_name">
+    <input type="submit" value ="Add">
+</form>
+{% endif%}
+</body>
+</html>

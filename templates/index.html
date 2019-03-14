@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<ul>
+{% for group in groups%}
+    <li>{{group.name}} <a href="/add_people/{{group.id}}">+ add_user</a>
+    <ul>
+        {%for people in group.peoples %}
+        <li>{{people.name}}</li>
+        {% endfor%}
+    </ul>
+    </li>
+{% endfor%}
+    </ul>
+
+<a href = "/add_group">
+    Add Group
+</a>
+</body>
+</html>
